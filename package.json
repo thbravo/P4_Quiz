@@ -1,0 +1,26 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "P2_Quiz",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "quiz",
+    "core",
+    "node"
+  ],
+  "author": "Teresa Hernando Bravo",
+  "license": "Unlicense",
+  "dependencies": {
+    "chalk": "^2.3.1",
+    "figlet": "^1.2.0",
+    "ls": "^0.2.1",
+    "npm": "^5.7.1",
+    "package.json": "^2.0.1",
+    "sequelize": "^4.35.2",
+    "sqlite3": "^3.1.13"
+  }
+}
