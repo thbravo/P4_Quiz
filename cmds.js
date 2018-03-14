@@ -175,7 +175,7 @@ exports.testCmd = (rl,id) => {
         .then(id => models.quiz.findById(id))
         .then(quiz => {
             if (!quiz){
-                throw new Error(`Ǹo existe un quiz asociado al id=${id}.`);
+                throw new Error(`No existe un quiz asociado al id=${id}.`);
             }
 
             log(`[${colorize(quiz.id,'magenta')}]: ${quiz.question}: `);
@@ -222,8 +222,7 @@ exports.playCmd = rl => {
     const playOne = () => {
         return new Sequelize.Promise((resolve,reject) => {
             if(toBeResolved.length <=0){
-                console.log("No hay nada más que preguntar.");
-                console.log("Fin del examen. Aciertos:");
+                console.log(`Respuesta incorrecta. Fin del examen. Aciertos: ${score}`);
                 resolve();
                 biglog(score, 'magenta');
                 return;
@@ -235,11 +234,10 @@ exports.playCmd = rl => {
                 .then(response => {
                     if(response.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
                         score++;
-                        console.log("CORRECTO - Lleva ",score, "aciertos");
+                        console.log(`Respuesta correcta. Fin del examen. Aciertos: ${score}`);
                         resolve(playOne());
                     } else {
-                        console.log("INCORRECTO.");
-                        console.log("Fin del examen. Aciertos:");
+                        console.log(`Respuesta incorrecta. Fin del examen. Aciertos: ${score}`);
                         resolve();
                         biglog(score, 'magenta');
                     }
