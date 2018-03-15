@@ -20,9 +20,7 @@ exports.helpCmd = rl => {
     rl.prompt();
 };
 
-/**
- * List todo slos quizzes existentes en el modelo.
- */
+
 exports.listCmd = rl => {
     models.quiz.findAll()
         .each(quiz => {
@@ -179,20 +177,16 @@ exports.testCmd = (rl,id) => {
             }
 
             log(`[${colorize(quiz.id,'magenta')}]: ${quiz.question}: `);
-            return makeQuestion(rl, ' Introduzca la respuesta: ')
+            return makeQuestion(rl, '')
                 .then(r => {
 
                     if(quiz.answer.toUpperCase().trim() === r.toUpperCase().trim()){
 
-                        log("Su respuesta es correcta");
-
-                        biglog('Correcta', 'green');
+                        log("\b correct");
 
                     } else{
 
-                        log("Su respuesta es incorrecta");
-
-                        biglog('Incorrecta', 'red');
+                        log("\b incorrect");
 
                     }
 
@@ -222,10 +216,9 @@ exports.playCmd = rl => {
     const playOne = () => {
         return new Sequelize.Promise((resolve,reject) => {
             if(toBeResolved.length <=0){
-                console.log(`Respuesta incorrecta. Fin del examen. Aciertos: ${score}`);
+                console.log(`\b Fin del examen. Aciertos: ${score}`);
                 resolve();
-                biglog(score, 'magenta');
-                return;
+                rl.prompt();
             }
             let id = Math.floor(Math.random()*toBeResolved.length);
             let quiz = toBeResolved[id];
@@ -234,12 +227,12 @@ exports.playCmd = rl => {
                 .then(response => {
                     if(response.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
                         score++;
-                        console.log(`Respuesta correcta. Fin del examen. Aciertos: ${score}`);
+                        console.log('\b correct');
                         resolve(playOne());
                     } else {
-                        console.log(`Respuesta incorrecta. Fin del examen. Aciertos: ${score}`);
+                        console.log(`\b incorrect. Fin del examen. Aciertos: ${score}`);
                         resolve();
-                        biglog(score, 'magenta');
+                        rl.prompt();
                     }
                 })
         })
