@@ -227,7 +227,7 @@ exports.playCmd = rl => {
                 .then(response => {
                     if(response.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
                         score++;
-                        console.log('\b CORRECTO');
+                        console.log(`\b CORRECTO - LLeva ${score} aciertos`);
                         resolve(playOne());
                     } else {
                         console.log(`\b INCORRECTO - FIN - Aciertos: ${score}`);
