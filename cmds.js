@@ -182,11 +182,11 @@ exports.testCmd = (rl,id) => {
 
                     if(quiz.answer.toUpperCase().trim() === r.toUpperCase().trim()){
 
-                        log("\b correct");
+                        log("\b CORRECTO");
 
                     } else{
 
-                        log("\b incorrect");
+                        log("\b INCORRECTO");
 
                     }
 
@@ -216,7 +216,7 @@ exports.playCmd = rl => {
     const playOne = () => {
         return new Sequelize.Promise((resolve,reject) => {
             if(toBeResolved.length <=0){
-                console.log(`\b Fin del examen. Aciertos: ${score}`);
+                console.log(`\b FIN - Aciertos: ${score}`);
                 resolve();
                 rl.prompt();
             }
@@ -227,10 +227,10 @@ exports.playCmd = rl => {
                 .then(response => {
                     if(response.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
                         score++;
-                        console.log('\b correct');
+                        console.log('\b CORRECTO');
                         resolve(playOne());
                     } else {
-                        console.log(`\b incorrect. Fin del examen. Aciertos: ${score}`);
+                        console.log(`\b INCORRECTO - FIN - Aciertos: ${score}`);
                         resolve();
                         rl.prompt();
                     }
@@ -261,11 +261,11 @@ exports.creditsCmd = rl => {
     console.log('Autora de la práctica:');
     console.log('TERESA');
     rl.prompt();
-}
+};
 /**
  * Terminar el programa.
  */
 exports.quitCmd = rl => {
     rl.close();
     rl.prompt();
-}
+};
