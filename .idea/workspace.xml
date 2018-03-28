@@ -14,21 +14,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="96" column="17" lean-forward="false" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+            <state relative-caret-position="950">
+              <caret line="95" column="25" lean-forward="true" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cmds.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cmds.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmds.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="270" column="2" lean-forward="true" selection-start-line="270" selection-start-column="2" selection-end-line="270" selection-end-column="2" />
+            <state relative-caret-position="25">
+              <caret line="172" column="27" lean-forward="true" selection-start-line="172" selection-start-column="27" selection-end-line="172" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -87,8 +87,8 @@
       <list>
         <option value="$PROJECT_DIR$/model.js" />
         <option value="$PROJECT_DIR$/out.js" />
-        <option value="$PROJECT_DIR$/cmds.js" />
         <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/cmds.js" />
       </list>
     </option>
   </component>
@@ -217,12 +217,12 @@
       <workItem from="1521050078070" duration="2586000" />
       <workItem from="1521182846212" duration="2368000" />
       <workItem from="1522159741230" duration="3804000" />
-      <workItem from="1522226877802" duration="2923000" />
+      <workItem from="1522226877802" duration="4903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79746000" />
+    <option name="totallyTimeSpent" value="81726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1016" y="0" width="914" height="1030" extended-state="0" />
@@ -652,18 +652,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmds.js">
+    <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="270" column="2" lean-forward="true" selection-start-line="270" selection-start-column="2" selection-end-line="270" selection-end-column="2" />
+        <state relative-caret-position="950">
+          <caret line="95" column="25" lean-forward="true" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
+    <entry file="file://$PROJECT_DIR$/cmds.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="96" column="17" lean-forward="false" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+        <state relative-caret-position="25">
+          <caret line="172" column="27" lean-forward="true" selection-start-line="172" selection-start-column="27" selection-end-line="172" selection-end-column="27" />
           <folding />
         </state>
       </provider>

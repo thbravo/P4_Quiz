@@ -73,7 +73,7 @@ exports.showCmd = (socket, rl, id) => {
         });
 };
 
-const makeQuestion = (socket, rl, text) => {
+const makeQuestion = (rl, text) => {
     return new Sequelize.Promise((resolve, reject) => {
         rl.question(colorize(text, 'red'), answer => {
             resolve(answer.trim());
@@ -183,11 +183,12 @@ exports.testCmd = (socket, rl,id) => {
                     if(quiz.answer.toUpperCase().trim() === r.toUpperCase().trim()){
 
                         log(socket, "\b CORRECTO");
+                        biglog(socket, 'Correcta', 'green');
 
                     } else{
 
                         log(socket, "\b INCORRECTO");
-
+                        biglog(socket, 'Incorrecta', 'green');
                     }
 
                 });
@@ -215,7 +216,7 @@ exports.playCmd = (socket, rl) => {
     let toBeResolved = [];
     const playOne = () => {
         return new Sequelize.Promise((resolve,reject) => {
-            if(toBeResolved.length <=0){
+            if(toBeResolved.length <= 0){
                 log(socket, `\b FIN - Aciertos: ${score}`);
                 resolve();
                 rl.prompt();
@@ -223,6 +224,7 @@ exports.playCmd = (socket, rl) => {
             let id = Math.floor(Math.random()*toBeResolved.length);
             let quiz = toBeResolved[id];
             toBeResolved.splice(id,1);
+
             makeQuestion(rl, colorize(quiz.question + '? ', 'red'))
                 .then(response => {
                     if(response.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){

@@ -93,7 +93,7 @@ net.createServer(socket => {  //Toma como parámetro el socket que nos conecta c
             rl.prompt();
         })
         .on('close', () => {
-            log(socket, '\nAdios!');
+            log(socket, 'Adios!');
             //process.exit(0);
         });
 
